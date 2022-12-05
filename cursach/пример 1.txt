@@ -1,0 +1,16 @@
+Variable x = new Variable("x");
+        Variable y = new Variable("y");
+
+        F f1 = new F()
+                .add(new F().multiply(x, 1.0).multiply(y, 2.0).type(Type.cos))
+                .multiply(5.3);
+
+        F f2 = new F()
+                .add(new F().multiply(y, 3.0))
+                .add(new F().multiply(7.0));
+
+        Matrix matrix = new Matrix(2.0).add(f1).add(f2);
+
+
+        System.out.println(matrix);
+        matrix.solveMatrix();
